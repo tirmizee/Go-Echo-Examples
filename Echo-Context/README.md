@@ -1,0 +1,3 @@
+- mkdir Echo-Context && cd Echo-Context
+- go mod init echo-context
+- go get -u github.com/labstack/echo/v4
