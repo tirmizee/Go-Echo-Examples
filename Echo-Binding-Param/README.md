@@ -5,6 +5,11 @@
 
 ```go
 
+type ProductRequest struct {
+	ID   string `param:"id"`
+	Name string `param:"name"`
+}
+
 func main() {
 
 	// Echo instance

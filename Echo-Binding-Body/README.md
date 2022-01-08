@@ -1,6 +1,5 @@
 - go mod init bind-body
 
-
 ### Demo
 
 ```go
