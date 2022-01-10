@@ -42,7 +42,7 @@ func main() {
 	// custom config
 	// e.Use(middleware.BodyDumpWithConfig(middleware.BodyDumpConfig{}))
 
-	// rounter
+	// router
 	e.POST("/", HandlerPOST)
 
 	e.Logger.Fatal(e.Start(":8080"))
