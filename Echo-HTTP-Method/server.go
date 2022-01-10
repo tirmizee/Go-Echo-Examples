@@ -30,8 +30,8 @@ func main() {
 
 	e.GET("/GET", HandlerGET)
 	e.PUT("/PUT", HandlerPUT)
-	e.GET("/POST", HandlerPOST)
-	e.GET("/DELETE", HandlerDELETE)
+	e.POST("/POST", HandlerPOST)
+	e.DELETE("/DELETE", HandlerDELETE)
 
 	e.Logger.Fatal(e.Start(":8080"))
 
