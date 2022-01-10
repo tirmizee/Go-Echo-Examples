@@ -22,12 +22,13 @@ func main() {
 	e := echo.New()
 
 	// manual config
-	// e.Use(middleware.BodyDump(BodyDumpHandler))
+	e.Use(middleware.BodyDump(BodyDumpHandler))
 
 	// custom config
-	e.Use(middleware.BodyDumpWithConfig(middleware.BodyDumpConfig{}))
+	// e.Use(middleware.BodyDumpWithConfig(middleware.BodyDumpConfig{}))
 
-	e.POST("/POST", HandlerPOST)
+	// rounter
+	e.POST("/", HandlerPOST)
 
 	e.Logger.Fatal(e.Start(":8080"))
 
