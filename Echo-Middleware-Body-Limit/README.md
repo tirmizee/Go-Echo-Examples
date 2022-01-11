@@ -1,0 +1,36 @@
+- go mod init body-limit
+- go get github.com/labstack/echo/v4
+- go get github.com/labstack/echo/middleware
+
+### Demo
+
+
+```go
+
+func HandlerPOST(c echo.Context) error {
+	return c.String(http.StatusOK, "POST Method")
+}
+
+func main() {
+
+	e := echo.New()
+
+	// config
+	e.Use(middleware.BodyLimit("1K"))
+
+	// contom config
+	// e.Use(middleware.BodyLimitWithConfig(middleware.BodyLimitConfig{}))
+
+	// router
+	e.POST("/", HandlerPOST)
+
+	e.Logger.Fatal(e.Start(":8080"))
+
+}
+
+
+```
+
+        curl -XPOST -H "Content-type: application/json" -d '{"key" : "dadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmsdkamdaklsdmasdadkmdmas"}' 'http://localhost:8080/'
+
+        {"message":"Request Entity Too Large"}
