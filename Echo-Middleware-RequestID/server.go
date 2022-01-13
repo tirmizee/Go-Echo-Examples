@@ -1,11 +1,11 @@
-- go mod init requestid
-- go get github.com/labstack/echo/v4
-- go get github.com/labstack/echo/v4/middleware
-- go get github.com/google/uuid
+package main
 
-### Demo
+import (
+	"net/http"
 
-```go
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
+)
 
 func Handler(c echo.Context) error {
 	return c.String(http.StatusOK, c.Response().Header().Get(echo.HeaderXRequestID))
@@ -22,9 +22,3 @@ func main() {
 
 	e.Logger.Fatal(e.Start(":8080"))
 }
-
-```
-
-        http://localhost:8080/
-
-		curl -XGET -H 'X-Request-ID: 123456' 'http://localhost:8080'
