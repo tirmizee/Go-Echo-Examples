@@ -33,18 +33,18 @@ func main() {
 }
 
 ```
-http://localhost:8080/ne  					// 404
-http://localhost:8080/new 					// 200
-http://localhost:8080/old 					// 200
-http://localhost:8080/api/get 				// 200
-http://localhost:8080/get					// 200
-http://localhost:8080/api/put 				// 200
-http://localhost:8080/put					// 200
-http://localhost:8080/public/javascripts/1	// 200
-http://localhost:8080/js/1 					// 200
-http://localhost:8080/public/javascripts/2	// 200
-http://localhost:8080/js/2 					// 200
-http://localhost:8080/users/1/orders/1 		// 200
-http://localhost:8080/user/1/order/1 		// 200
-http://localhost:8080/users/2/orders/2 		// 200
-http://localhost:8080/user/2/order/2 		// 200
+		http://localhost:8080/ne  					// 404
+		http://localhost:8080/new 					// 200
+		http://localhost:8080/old 					// 200
+		http://localhost:8080/api/get 				// 200
+		http://localhost:8080/get					// 200
+		http://localhost:8080/api/put 				// 200
+		http://localhost:8080/put					// 200
+		http://localhost:8080/public/javascripts/1	// 200
+		http://localhost:8080/js/1 					// 200
+		http://localhost:8080/public/javascripts/2	// 200
+		http://localhost:8080/js/2 					// 200
+		http://localhost:8080/users/1/orders/1 		// 200
+		http://localhost:8080/user/1/order/1 		// 200
+		http://localhost:8080/users/2/orders/2 		// 200
+		http://localhost:8080/user/2/order/2 		// 200
